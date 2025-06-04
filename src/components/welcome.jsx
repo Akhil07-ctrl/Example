@@ -34,18 +34,18 @@ const Welcome = () => {
                         <p className="text-md text-gray-500 mb-6 w-2/3">
                             Ready to share more thoughts and ideas with the world?
                         </p>
-                        <button 
-                            onClick={() => navigate('/profile')} 
+                        <button
+                            onClick={() => navigate('/profile')}
                             className="w-full bg-violet-600 text-white font-semibold py-3 rounded-md mb-3 hover:bg-violet-700 transition duration-300 ease-in-out"
                         >
                             Go to Profile
                         </button>
-                        <button 
+                        <button
                             onClick={() => {
                                 localStorage.removeItem('currentUser');
                                 setIsLoggedIn(false);
                                 setUserName('');
-                            }} 
+                            }}
                             className="w-full bg-violet-200 text-violet-800 font-semibold py-3 rounded-md hover:bg-violet-300 transition duration-300 ease-in-out"
                         >
                             Logout

@@ -21,17 +21,17 @@ const Login = () => {
         e.preventDefault();
         // Handle login logic here
         console.log('Login data:', formData);
-        
+
         // Check if user already exists in localStorage (from previous signup)
         const existingUsers = JSON.parse(localStorage.getItem('registeredUsers') || '[]');
         const existingUser = existingUsers.find(user => user.email === formData.email);
-        
+
         let userData;
         if (existingUser) {
             // Use existing user data
             userData = existingUser;
         } else {
-            // Create new user data (for demo purposes)
+            // Generate new user data
             userData = {
                 name: formData.username || formData.email.split('@')[0], // Use username or email prefix as name
                 email: formData.email,
@@ -39,7 +39,7 @@ const Login = () => {
                 profileImage: 'https://randomuser.me/api/portraits/men/32.jpg'
             };
         }
-        
+
         localStorage.setItem('currentUser', JSON.stringify(userData));
         navigate('/profile');
     };
@@ -52,7 +52,7 @@ const Login = () => {
         <div className="flex flex-col justify-center items-center min-h-screen bg-gray-50 px-6 py-10">
             <div className="w-full max-w-sm">
                 <div className="mb-8">
-                    <button 
+                    <button
                         onClick={handleBackToWelcome}
                         className="text-left text-violet-600 hover:text-violet-700 mb-4"
                     >
@@ -75,7 +75,7 @@ const Login = () => {
                             className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent"
                         />
                     </div>
-                    
+
                     <div>
                         <input
                             type="email"
@@ -87,7 +87,7 @@ const Login = () => {
                             required
                         />
                     </div>
-                    
+
                     <div>
                         <input
                             type="password"
@@ -100,7 +100,7 @@ const Login = () => {
                         />
                     </div>
 
-                    <button 
+                    <button
                         type="submit"
                         className="w-full bg-violet-600 text-white font-semibold py-3 rounded-md hover:bg-violet-700 transition duration-300 ease-in-out"
                     >
@@ -111,7 +111,7 @@ const Login = () => {
                 <div className="mt-6 text-center">
                     <p className="text-gray-600">
                         Don't have an account?{' '}
-                        <button 
+                        <button
                             onClick={() => navigate('/sign-up')}
                             className="text-violet-600 hover:text-violet-700 font-semibold"
                         >
