@@ -9,7 +9,7 @@ import './App.css';
 
 const App = () => {
     return (
-        <Router>
+        <Router basename='/Pop-X'>
           <Routes>
             <Route path="/" element={<Welcome />} />
             <Route path="/sign-up" element={<SignUp />} />

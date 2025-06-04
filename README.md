@@ -2,8 +2,6 @@
 
 A modern, responsive social media platform built with React and Tailwind CSS where users can share their thoughts and ideas with the world.
 
-![PopX Logo](https://via.placeholder.com/200x100/6366f1/ffffff?text=PopX)
-
 ## 🌟 Features
 
 - **User Authentication**: Complete signup and login system
@@ -15,18 +13,7 @@ A modern, responsive social media platform built with React and Tailwind CSS whe
 
 ## 🚀 Live Demo
 
-[View Live Demo](https://your-username.github.io/popx-react-app) *(Replace with your actual GitHub Pages URL)*
-
-## 📸 Screenshots
-
-### Welcome Page
-![Welcome Page](https://via.placeholder.com/800x600/f3f4f6/374151?text=Welcome+Page)
-
-### Profile Page
-![Profile Page](https://via.placeholder.com/800x600/f3f4f6/374151?text=Profile+Page)
-
-### Login Page
-![Login Page](https://via.placeholder.com/800x600/f3f4f6/374151?text=Login+Page)
+Check out the live demo: [PopX](https://pop-x-teal.vercel.app/)
 
 ## 🛠️ Tech Stack
 
@@ -49,8 +36,7 @@ Before you begin, ensure you have the following installed:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/popx-react-app.git
-   cd popx-react-app
+   git clone https://github.com/Akhil07-ctrl/Pop-X.git
    ```
 
 2. **Navigate to the client directory**
@@ -279,9 +265,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👨‍💻 Author
 
 **Kundena Akhil**
-- GitHub: [@your-username](https://github.com/your-username)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/your-profile)
-- Email: your.email@example.com
+- Website: [Personal Portfolio](https://portfolio-nine-flax-29.vercel.app/)
+- GitHub: [@Akhil07-ctrl](https://github.com/Akhil07-ctrl)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/kundena-akhil-4b7073170/)
+- Email: akhilkundena@gmail.com
 
 ## 🙏 Acknowledgments
 
