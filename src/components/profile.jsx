@@ -165,7 +165,7 @@ const Profile = () => {
                             onClick={() => navigate('/')}
                             className="w-full py-2 px-4 bg-violet-600 text-white rounded-md hover:bg-violet-700 transition duration-200"
                         >
-                            Go to Home
+                            Go to Home Page
                         </button>
                         <button
                             onClick={handleLogout}

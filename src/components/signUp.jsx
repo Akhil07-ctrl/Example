@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
+import { v4 as uuidv4 } from 'uuid';
 
 const SignUp = () => {
 
@@ -23,8 +24,16 @@ const SignUp = () => {
         toast.success('Registration successful! Please login.')
         // Save user data to localStorage
         const userData = {
+            id: uuidv4(),
+            createdAt: new Date().toISOString(),
             name: form.fullName,
             email: form.email,
+            phoneNumber: form.phone,
+            company: form.company,
+            isAgency: form.isAgency,
+            password: form.password,
+            status: "active",
+            role: form.isAgency === "yes" ? "agency" : "individual",
             bio: `Hello! I'm ${form.fullName}. Welcome to my PopX profile!`,
             profileImage: 'https://randomuser.me/api/portraits/women/44.jpg'
         };
@@ -57,14 +66,14 @@ const SignUp = () => {
         <>
             <ToastContainer className='absolute top-2.5 right-2.5' />
             <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 px-6 py-10">
-                <button
-                    onClick={handleBackToWelcome}
-                    className="text-violet-600 hover:text-violet-700 mb-4"
-                >
-                    ← Back
-                </button>
                 <div className="w-full max-w-sm">
-                    <h1 className="tex-3xl font-bold text-gray-900 mb-2 w-[60%]">Create your PopX account</h1>
+                    <button
+                        onClick={handleBackToWelcome}
+                        className="text-left text-violet-600 hover:text-violet-700 mb-4"
+                    >
+                        ← Back
+                    </button>
+                    <h1 className="text-3xl font-bold text-gray-900 mb-2 w-[60%]">Create your PopX account</h1>
 
                     {/* Full Name */}
                     <div className="mb-4">
