@@ -162,7 +162,7 @@ const Profile = () => {
                     <div className="border-t border-dashed border-gray-300 my-6"></div>
                     <div className="space-y-3">
                         <button
-                            onClick={() => navigate('/')}
+                            onClick={() => navigate('/user-home')}
                             className="w-full py-2 px-4 bg-violet-600 text-white rounded-md hover:bg-violet-700 transition duration-200"
                         >
                             Go to Home Page

@@ -21,35 +21,47 @@ const SignUp = () => {
     }
 
     const handleSubmit = () => {
-        toast.success('Registration successful! Please login.')
-        // Save user data to localStorage
-        const userData = {
-            id: uuidv4(),
-            createdAt: new Date().toISOString(),
-            name: form.fullName,
-            email: form.email,
-            phoneNumber: form.phone,
-            company: form.company,
-            isAgency: form.isAgency,
-            password: form.password,
-            status: "active",
-            role: form.isAgency === "yes" ? "agency" : "individual",
-            bio: `Hello! I'm ${form.fullName}. Welcome to my PopX profile!`,
-            profileImage: 'https://randomuser.me/api/portraits/women/44.jpg'
-        };
-
-        // Save to registered users list
+        // Check if user already exists
         const existingUsers = JSON.parse(localStorage.getItem('registeredUsers') || '[]');
-        existingUsers.push(userData);
-        localStorage.setItem('registeredUsers', JSON.stringify(existingUsers));
+        const existingUser = existingUsers.find(user => user.email === form.email);
 
-        // Set as current user
-        localStorage.setItem('currentUser', JSON.stringify(userData));
+        if (existingUser) {
+            toast.warning('User already registered with this email! Please login.');
+            setTimeout(() => {
+                navigate('/login');
+            }, 3000);
+            return;
+        } else {
 
-        setTimeout(() => {
-            navigate('/login');
-        }, 2000)
+            toast.success('Registration successful! Please login.')
+            // Save user data to localStorage
+            const userData = {
+                id: uuidv4(),
+                createdAt: new Date().toISOString(),
+                name: form.fullName,
+                email: form.email,
+                phoneNumber: form.phone,
+                company: form.company,
+                isAgency: form.isAgency,
+                password: form.password,
+                status: "active",
+                role: form.isAgency === "yes" ? "agency" : "individual",
+                bio: `Hello! I'm ${form.fullName}. Welcome to my PopX profile!`,
+                profileImage: 'https://randomuser.me/api/portraits/women/44.jpg'
+            };
 
+            // Save to registered users list
+            const existingUsers = JSON.parse(localStorage.getItem('registeredUsers') || '[]');
+            existingUsers.push(userData);
+            localStorage.setItem('registeredUsers', JSON.stringify(existingUsers));
+
+            // Set as current user
+            localStorage.setItem('currentUser', JSON.stringify(userData));
+
+            setTimeout(() => {
+                navigate('/login');
+            }, 3000)
+        }
     };
 
     const isFormValid =
